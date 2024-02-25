@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "MuaGoi";
+    Layout = "~/Views/Shared/_LayoutDKDN.cshtml";
+}
+<style>
+    .custom-card {
+        border: 1px solid #000; 
+    }
+</style>
+<div class="card custom-card" style="margin-top:15%">
+    <h3 style="text-align:center; margin-top:3%"><strong>Thông tin chi tiết</strong></h3>
+
+    <div class="row" style="margin-left:3%">
+        <div class="col-md-6">
+            <h4>Tài khoản</h4>
+            <h4>Tên gói</h4>
+            <h4>Thời hạng gói</h4>
+            <h4>Ngày bắt đầu</h4>
+            <h4>Sử dụng đến</h4>
+            <h4>Trị giá</h4>
+        </div>
+        <div class="col-md-5 text-right">
+            @if(@Session["SDT"] == "")
+            {
+                <h4>Chưa đăng nhập</h4>
+            }
+            <h4>@Session["SDT"]</h4>
+            <h4>VIP</h4>
+            <h4>01 tháng</h4>
+            <h4>@DateTime.Now.ToString("dd/MM/yyyy")</h4>
+            <h4>@DateTime.Now.AddMonths(1).ToString("dd/MM/yyyy")</h4>
+            <h4>69.000đ</h4>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row" style="margin-left:3%">
+        <div class="col-md-5">
+            <h4>Thành tiền</h4>
+        </div>
+        <div class="col-md-6 text-right">
+            <h2 style="color:forestgreen"><strong>69.000đ</strong></h2>
+        </div>
+    </div>
+
+    <h5 style="margin-left:3%; margin-right:3%">Bằng việc thanh toán, bạn xác nhận đã đọc và đồng ý với Hợp đồng và chính sách của chúng tôi</h5>
+    <br />
+    @Html.ActionLink("Thanh toán với PayPal", "PaymentWithPayPal", "MuaGoiVip", new
+                        { }, new { @class = "btn btn-outline-success" })
+</div>

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Vieon.Models.TheLoai>
+
+
+@foreach (var chude in Model)
+{
+    <li>
+        <a href="@Url.Action("PhimTheoTheLoai", "PhimKhachs", new { id = chude.ID_TheLoai })"
+           class="list-group-item list-group-item-action" style="margin-left: 0px">
+            @chude.TenTheLoai
+        </a>
+    </li>
+}

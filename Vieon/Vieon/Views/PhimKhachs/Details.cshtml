@@ -1,0 +1,175 @@
+﻿@model Vieon.Models.Phim
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/ChiTiet.cshtml";
+}
+
+<style>
+    .vertical-scroll-container {
+        overflow-y: scroll;
+        height: 250px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .dau-sach-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .dau-sach-item {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .review-container {
+        max-width: 400px;
+        margin-left: 80px;
+        padding: 50px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .review-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .review-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .review-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .review-button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .review-button:hover {
+            background-color: #0056b3;
+        }
+</style>
+<div class="row">
+    <div class="card-pro" style="margin-left:100px; margin-top:50px">
+        <img src="~/Content/images/@Model.HinhMinhHoa" width="500">
+    </div>
+    <div style="margin-left: 75px; margin-top: 50px">
+        <h3 style="color: #007BFF "><strong>@Html.DisplayFor(model => model.TenPhim)</strong></h3>
+        <div class="row">
+
+            <div style="margin-left:15px">
+                <br />
+                <strong>Thời lượng: @Html.DisplayFor(model => model.ThoiLuong)</strong>
+                <br />
+                <br />
+                <strong>Năm ra mắt: @Html.DisplayFor(model => model.NamRaMat)</strong>
+                <br />
+                <br />
+                <strong>Loại phim: @Html.DisplayFor(model => model.LoaiPhim)</strong>
+            </div>
+            <div style="margin-left:75px">
+                <br />
+                <strong>Đạo diễn:</strong>
+                @foreach (var daoDien in Model.Phim_DaoDien)
+                {
+                    <span>@daoDien.DaoDien.TenDaoDien</span>
+                    if (!daoDien.Equals(Model.Phim_DaoDien.Last()))
+                    {
+                        <span>,</span>
+                    }
+                }
+                <br />
+                <br />
+                <strong>Thể loại:</strong>
+                @foreach (var tl in Model.Phim_TheLoai)
+                {
+                    <span>@tl.TheLoai.TenTheLoai</span>
+                    if (!tl.Equals(Model.Phim_TheLoai.Last()))
+                    {
+                        <span>,</span>
+                    }
+                }
+                <br />
+                <br />
+            </div>
+        </div>
+        <br />
+        <div>
+            <strong>Mô tả:</strong>
+        </div>
+        <br />
+        <div style="max-width: 650px; word-wrap: break-word;">
+            @Html.DisplayFor(model => model.MoTa)
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div style="margin-left:3%">
+    <h2><strong>Danh sách tập của phim</strong></h2>
+</div>
+<div class="vertical-scroll-container" style="margin-left:3%">
+    <ul class="dau-sach-list">
+        @foreach (var dauSach in Model.TapPhims)
+        {
+            <li class="dau-sach-item">
+                <strong>Số tập:</strong> @dauSach.SoTap |
+                <strong>Thời lượng:</strong> @dauSach.ThoiLuong |
+                <strong>Ngày ra mắt:</strong> @dauSach.NgayRaMat
+                <a href="@Url.Action("Details", "TapPhims", new { id = dauSach.ID_TapPhim })" class="btn btn-primary">Xem phim</a>
+            </li>
+        }
+    </ul>
+</div>
+<br />
+<div style="margin-left:3%">
+    <h2><strong>Bình luận</strong></h2>
+
+    <div class="vertical-scroll-container">
+        <ul class="dau-sach-list">
+            @foreach (var bl in Model.BinhLuans)
+            {
+                <li class="dau-sach-item">
+                    <strong>@bl.User.SDT</strong>
+                    @bl.NgayDang
+                    <br />
+                    @bl.NoiDung
+                </li>
+            }
+        </ul>
+    </div>
+
+</div>
+<br />
+<div style="margin-left:3%" ">
+    <form action="@Url.Action("Create", "BinhLuans")" method="post">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.ID_Phim)
+        <div class="form-group">
+            <label>Viết bình luận</label>
+            <textarea class="form-control" rows="3" name="NoiDung" placeholder="Viết bình luận của bạn ở đây."></textarea>
+        </div>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Đăng" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>
+<br />
+<br />
+<br />

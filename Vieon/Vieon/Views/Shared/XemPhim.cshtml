@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .container-flex {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .site-footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+            .site-footer h3 {
+                color: #fff;
+            }
+
+            .site-footer p {
+                color: #ccc;
+            }
+
+        .social-icons li {
+            list-style: none;
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+            .social-icons a:hover {
+                color: #007BFF;
+            }
+    </style>
+
+    <title>Website Menu #4</title>
+</head>
+<body>
+    <div class="container-flex">
+        <div class="row">
+            <div class="content">
+                <!-- Your existing code for the content goes here -->
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="margin-left:100px">Liên hệ với chúng tôi</h3>
+                    <p style="margin-left:100px">Email: ddh@gmail.com</p>
+                    <p style="margin-left:100px">Phone: 0901234567</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 style="margin-left:230px">Theo dõi chúng tôi</h3>
+                    <ul class="social-icons" style="margin-left:190px">
+                        <li><a href="#"><span class="icon-twitter"></span> Twitter</a></li>
+                        <li><a href="#"><span class="icon-facebook"></span> Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

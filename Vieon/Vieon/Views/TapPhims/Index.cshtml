@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Vieon.Models.TapPhim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SoTap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThoiLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayRaMat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlPhim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phim.TenPhim)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoTap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThoiLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayRaMat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrlPhim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phim.TenPhim)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_TapPhim }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_TapPhim }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_TapPhim })
+        </td>
+    </tr>
+}
+
+</table>

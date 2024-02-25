@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d65eea2c3be8456ca84038caade231ea" Name="Diagram1">
+        <EntityTypeShape EntityType="VieONVipProModel.BinhLuan" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VieONVipProModel.DaoDien" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VieONVipProModel.Phim" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="VieONVipProModel.Phim_DaoDien" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VieONVipProModel.Phim_TheLoai" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VieONVipProModel.PhimYeuThich" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VieONVipProModel.TapPhim" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VieONVipProModel.ThanhToan" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VieONVipProModel.TheLoai" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VieONVipProModel.User" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="VieONVipProModel.FK__BinhLuan__ID_Phi__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="VieONVipProModel.FK__BinhLuan__ID_Use__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="VieONVipProModel.FK__Phim_DaoD__ID_Da__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="VieONVipProModel.FK__Phim_DaoD__ID_Ph__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="VieONVipProModel.FK__Phim_TheL__ID_Ph__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="VieONVipProModel.FK__PhimYeuTh__ID_Ph__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="VieONVipProModel.FK__TapPhim__UrlPhim__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="VieONVipProModel.FK__Phim_TheL__ID_Th__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="VieONVipProModel.FK__PhimYeuTh__ID_Us__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="VieONVipProModel.FK__ThanhToan__ID_Us__5165187F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

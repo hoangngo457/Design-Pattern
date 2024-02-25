@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "ThongTinGoi";
+    Layout = "~/Views/Shared/_LayoutDKDN.cshtml";
+}
+<style>
+    .card-pro {
+        border: 1px solid #ccc;
+        transition: border 0.3s;
+        width: 175px;
+        height: 300px;
+        margin-bottom: 25px;
+    }
+    .card-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .card-pro:hover {
+        border: 2px solid black;
+    }
+</style>
+<div class="card-pro" style="width:300px;height:500px%; ">
+    <h4 style="text-align:center;margin-top:15%">01 Tháng</h4>
+    <h4 style="text-align:center; color:lawngreen">69.000đ/tháng</h4>
+    <br />
+    <h6 style="text-align:center">Đặc quyền phim, show Việt đỉnh</h6>
+    <br />
+    <h6 style="text-align:center">Độc quyền Saudi Pro Luage</h6>
+    <br />
+    <div style="margin-left:30%">
+        <a href="~/MuaGoiVip/MuaGoi" class="btn btn-warning"> <span class="d-none d-md-inline-block">Chọn gói này</span></a>
+    </div>
+
+</div>
+

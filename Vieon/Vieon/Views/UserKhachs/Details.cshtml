@@ -1,0 +1,57 @@
+﻿@model Vieon.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/ChiTiet.cshtml";
+}
+
+<style>
+    .vertical-scroll-container {
+        overflow-y: scroll;
+        height: 200px;
+        width: 950px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .dau-sach-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .info-column {
+        margin-right: 20px;
+    }
+</style>
+<div style="margin-left: 10%">
+    <h2>Thông tin tài khoản</h2>
+    <hr />
+    <div class="row" style="margin-left:2%">
+        <div class="info-column">
+            <strong>Họ tên:</strong> @Html.DisplayFor(model => model.HoTen)
+            <br />
+            <br />
+            <strong>Email:</strong> @Html.DisplayFor(model => model.Email)
+            <br />
+            <br />
+            <strong>Loại tài khoản:</strong> @Html.DisplayFor(model => model.RoleUser)
+        </div>
+        <div class="info-column" style="margin-left:5%">
+            <strong>Số điện thoại:</strong> @Html.DisplayFor(model => model.SDT)
+            <br />
+            <br />
+            <strong>Mật khẩu:</strong> @Html.DisplayFor(model => model.MatKhau)
+        </div>
+    </div>
+    <br />
+    <p style="margin-left:900px">
+        @if (Model.RoleUser == "Vip")
+        {
+            using (Html.BeginForm("CancelSubscription", "ThanhToans", new { userId = Model.ID_User }, FormMethod.Post, new { role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-danger" style="margin-left:900px">Hủy gói</button>
+            }
+        }
+    </p>
+</div>

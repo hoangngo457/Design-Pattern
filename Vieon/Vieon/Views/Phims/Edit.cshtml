@@ -1,0 +1,212 @@
+﻿@model Vieon.Models.Phim
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .vertical-scroll-container {
+        overflow-y: scroll; /* Cho phép thanh cuộn dọc */
+        height: 300px; /* Điều chỉnh chiều cao của khung (thay đổi theo yêu cầu) */
+        border: 1px solid #ccc; /* Viền khung cho khung có thanh cuộn dọc */
+        padding: 10px; /* Khoảng cách bên trong khung */
+    }
+
+    .dau-sach-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .dau-sach-item {
+        margin-bottom: 15px; /* Khoảng cách giữa các đầu sách */
+        border: 1px solid #ccc; /* Viền cho mỗi đầu sách */
+        padding: 10px; /* Khoảng cách bên trong mỗi đầu sách */
+    }
+
+    .review-container {
+        max-width: 400px;
+        margin-left: 80px;
+        padding: 50px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .review-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .review-text {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .review-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .review-button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .review-button:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ID_Phim)
+
+    <div class="row">
+        <div class="card-pro" style="margin-left:100px; margin-top:50px">
+            <img src="~/Content/images/@Model.HinhMinhHoa" width="250">
+            @Html.TextBoxFor(model => model.HinhMinhHoa, null, new { type = "file", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.HinhMinhHoa, "", new { @class = "text-danger" })
+        </div>
+
+        <div style="margin-left: 75px; margin-top: 50px">
+            <h3 style="color: #007BFF "><strong>Tên phim </strong>:</h3>
+
+            @Html.EditorFor(model => model.TenPhim, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenPhim, "", new { @class = "text-danger" })
+
+            <div class="row">
+
+                <div style="margin-left:15px">
+                    <br />
+                    <strong>Ngày ra mắt:</strong>
+                    @Html.EditorFor(model => model.NamRaMat, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NamRaMat, "", new { @class = "text-danger" })
+                    <br />
+                    <strong>Thời lượng:</strong>
+                    @Html.EditorFor(model => model.ThoiLuong, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ThoiLuong, "", new { @class = "text-danger" })
+                </div>
+                <div style="margin-left:75px">
+                    <br />
+                    <strong>Loại phim:</strong>
+                    @Html.EditorFor(model => model.LoaiPhim, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LoaiPhim, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <br />
+            <div>
+                <strong>Giới thiệu phim:</strong>
+            </div>
+            <br />
+            <div style="max-width: 650px; word-wrap: break-word;">
+                @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.ActionLink("Thêm thể loại", "Create", "Phim_TheLoai", new { id = Model.ID_Phim }, new { @class = "btn btn-primary" })
+    </div>
+
+    <h2>Danh sách thể loại của phim</h2>
+    <div class="vertical-scroll-container">
+        <ul class="dau-sach-list">
+            @foreach (var dauSach in Model.Phim_TheLoai)
+            {
+                <li class="dau-sach-item">
+                    <strong>Tên thể loại:</strong> @dauSach.TheLoai.TenTheLoai
+                    @Html.ActionLink("Sửa", "Edit", "Phim_TheLoai", new { id = dauSach.ID_Phim_TheLoai }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("Xóa", "Delete", "Phim_TheLoai", new { id = dauSach.ID_Phim_TheLoai }, new { @class = "btn btn-danger btn-sm" })
+                </li>
+            }
+        </ul>
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.ActionLink("Thêm đạo diễn", "Create", "Phim_DaoDien", new { id = Model.ID_Phim }, new { @class = "btn btn-primary" })
+    </div>
+
+    <h2>Danh sách đạo diễn của phim</h2>
+    <div class="vertical-scroll-container">
+        <ul class="dau-sach-list">
+            @foreach (var dauSach in Model.Phim_DaoDien)
+            {
+                <li class="dau-sach-item">
+                    <strong>Họ tên:</strong> @dauSach.DaoDien.TenDaoDien |
+                    <strong>Vai trò:</strong> @dauSach.VaiTro
+                    @Html.ActionLink("Sửa", "Edit", "Phim_DaoDien", new { id = dauSach.ID_Phim_DaoDien }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("Xóa", "Delete", "Phim_DaoDien", new { id = dauSach.ID_Phim_DaoDien }, new { @class = "btn btn-danger btn-sm" })
+                </li>
+            }
+        </ul>
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.ActionLink("Thêm tập phim", "Create", "TapPhims", new { id = Model.ID_Phim }, new { @class = "btn btn-primary" })
+    </div>
+
+    <h2>Danh sách tập của phim</h2>
+    <div class="vertical-scroll-container">
+        <ul class="dau-sach-list">
+            @foreach (var dauSach in Model.TapPhims)
+            {
+                <li class="dau-sach-item">
+                    <strong>Số tập:</strong> @dauSach.SoTap |
+                    <strong>Tên tập:</strong> @dauSach.TenTap |
+                    <strong>Mô tả:</strong> @dauSach.MoTa |
+                    <strong>URL:</strong> @dauSach.UrlPhim |
+                    <strong>Thời lượng:</strong> @dauSach.ThoiLuong |
+                    <strong>Ngày ra mắt:</strong> @dauSach.NgayRaMat
+                    @Html.ActionLink("Sửa", "Edit", "TapPhims", new { id = dauSach.ID_TapPhim }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("Xóa", "Delete", "TapPhims", new { id = dauSach.ID_TapPhim }, new { @class = "btn btn-danger btn-sm" })
+                </li>
+            }
+        </ul>
+    </div>
+    <br />
+    <div style="">
+        <h2>Bình luận</h2>
+
+        <div class="vertical-scroll-container">
+            <ul class="dau-sach-list">
+                @foreach (var bl in Model.BinhLuans)
+                {
+                    <li class="dau-sach-item">
+                        <strong>@bl.User.SDT</strong>
+                        @bl.NgayDang
+                        <br />
+                        @bl.NoiDung
+                        @Html.ActionLink("Sửa", "Edit", "BinhLuans", new { id = bl.ID_BinhLuan }, new { @class = "btn btn-warning btn-sm" })
+                        @Html.ActionLink("Xóa", "Delete", "BinhLuans", new { id = bl.ID_BinhLuan }, new { @class = "btn btn-danger btn-sm" })
+                    </li>
+                }
+            </ul>
+        </div>
+
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Lưu" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

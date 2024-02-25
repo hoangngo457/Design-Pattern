@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+
+    <style>
+        .search-bar {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+            .search-bar form {
+                display: flex;
+                align-items: center;
+            }
+
+            .search-bar input {
+                margin-right: 5px;
+            }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .container-flex {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+        }
+        .element {
+            margin-left: 30px;
+            margin-right: 15px;
+            border: 2px solid #404040;
+            border-radius: 20px
+        }
+        .site-footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+            .site-footer h3 {
+                color: #fff;
+            }
+
+            .site-footer p {
+                color: #ccc;
+            }
+
+        .social-icons li {
+            list-style: none;
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+            .social-icons a:hover {
+                color: #007BFF;
+            }
+    </style>
+
+    <title>Website Menu #4</title>
+</head>
+<body>
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="#" class=""><span class="mr-2  icon-envelope-open-o"></span> <span class="d-none d-md-inline-block">dh@gmail.com</span></a>
+                    <span class="mx-md-2 d-inline-block"></span>
+                    <a href="#" class=""><span class="mr-2  icon-phone"></span> <span class="d-none d-md-inline-block">0901234567</span></a>
+                    @{
+                        var userRole = Session["Role"] != null ? Session["Role"].ToString() : "Guest";
+                    }
+                    <div class="float-right">
+                        @if (Session["TaiKhoan"] == "")
+                        {
+                            <a href="~/MuaGoiVip/ThongTinGoi" class="btn btn-warning" style="margin-right:20px"> <span class="d-none d-md-inline-block">Đăng ký gói</span></a>
+                            <a href="/NguoiDung/DangKy" class="" style="margin-right:20px"> <span class="d-none d-md-inline-block">Đăng ký</span></a>
+                            <a href="/NguoiDung/DangNhap" class=""> <span class="d-none d-md-inline-block">Đăng nhập</span></a>
+                        }
+                        else
+                        {
+                            <text>
+                                @if (userRole == "Vip")
+                                {
+                                    <a href="#" class="btn btn-warning" style="margin-right:20px"> <span class="d-none d-md-inline-block">Tài khoản VIP</span></a>
+                                }
+                                else
+                                {
+                                    <a href="~/MuaGoiVip/ThongTinGoi" class="btn btn-warning" style="margin-right:20px"> <span class="d-none d-md-inline-block">Đăng ký gói</span></a>
+                                }
+                            </text>
+                            <span style="margin-left:0px">Xin chào: @Session["HoTen"]</span>
+                            <a href="/NguoiDung/DangXuat" class="" style="margin-left:20px">Đăng xuất</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+        <div class="container">
+            <div class="row align-items-center position-relative">
+                <div class="site-logo">
+                    <a href="~/PhimKhachs/Index" class="text-black"><span class="text-primary">VieON</span></a>
+                </div>
+
+                @if (Session["ID"] != "")
+                {
+                    <div class="col-12">
+                        <nav class="site-navigation text-right ml-auto " role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                                <li><a href="~/PhimKhachs/Index" class="nav-link">Trang chủ</a></li>
+
+                                <li class="has-children">
+                                    <a href="#about-section" class="nav-link">Thể loại</a>
+                                    <ul class="dropdown arrow-top">
+                                        @{Html.RenderAction("LayTheLoai", "TheLoais");}
+                                    </ul>
+                                </li>
+                                <li><a href="~/UserKhachs/Details/@Session["ID"]" class="nav-link">Tài khoản</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12">
+                        <nav class="site-navigation text-right ml-auto " role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                                <li><a href="~/PhimKhachs/Index" class="nav-link">Trang chủ</a></li>
+
+                                <li class="has-children">
+                                    <a href="#about-section" class="nav-link">Thể loại</a>
+                                    <ul class="dropdown arrow-top">
+                                        <li>@{ Html.RenderAction("LayTheLoai", "TheLoais");}</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                }
+            </div>
+        </div>
+    </header>
+    <div class="search-bar ml-auto" style="margin-right:5%; margin-bottom:3%">
+        <form action="/PhimKhachs/Index" method="get">
+            <input type="text" name="searchText" placeholder="Nhập tên phim">
+            <button type="submit">Tìm kiếm</button>
+        </form>
+    </div>
+    <div style="display:flex; margin-left:3%; margin-right:3%; margin-top">
+        <div style="margin-right: 25px" class="hero"><img src="~/Content/images/Banner1.png" width="100%" height="600px" /></div>
+        <div margin-right:15px>
+            <div><img src="~/Content/Images/Banner.jpg" width="600px" height="300" /></div>
+            <div style="margin-top: 25px; display: flex">
+                <div><img style="margin-right: 25px" src="~/Content/Images/Banner3.png" width="288px" height="275" /></div>
+                <div><img src="~/Content/Images/Banner4.jpeg" width="288px" height="275" /></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-flex">
+        <div class="row">
+            <div class="content">
+                <!-- Your existing code for the content goes here -->
+                <div class="element">
+                    <div style="margin-top: 10px; margin-left:10px;display:flex">
+                        <img style="width: 35px; height: 35px; margin-right: 12px" src="https://media.giphy.com/media/tnjFxrbDmB0mk/giphy.gif" />
+                        <h2><strong>Phim</strong></h2>
+                    </div>
+                    <br />
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="margin-left:100px">Liên hệ với chúng tôi</h3>
+                    <p style="margin-left:100px">Email: ddh@gmail.com</p>
+                    <p style="margin-left:100px">Phone: 0901234567</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 style="margin-left:230px">Theo dõi chúng tôi</h3>
+                    <ul class="social-icons" style="margin-left:190px">
+                        <li><a href="#"><span class="icon-twitter"></span> Twitter</a></li>
+                        <li><a href="#"><span class="icon-facebook"></span> Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

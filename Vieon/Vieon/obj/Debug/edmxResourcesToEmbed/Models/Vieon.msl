@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VieONVipProModelStoreContainer" CdmEntityContainer="VieONVipProEntities">
+    <EntitySetMapping Name="BinhLuans">
+      <EntityTypeMapping TypeName="VieONVipProModel.BinhLuan">
+        <MappingFragment StoreEntitySet="BinhLuan">
+          <ScalarProperty Name="ID_BinhLuan" ColumnName="ID_BinhLuan" />
+          <ScalarProperty Name="ID_Phim" ColumnName="ID_Phim" />
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DaoDiens">
+      <EntityTypeMapping TypeName="VieONVipProModel.DaoDien">
+        <MappingFragment StoreEntitySet="DaoDien">
+          <ScalarProperty Name="ID_DaoDien" ColumnName="ID_DaoDien" />
+          <ScalarProperty Name="TenDaoDien" ColumnName="TenDaoDien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phims">
+      <EntityTypeMapping TypeName="VieONVipProModel.Phim">
+        <MappingFragment StoreEntitySet="Phim">
+          <ScalarProperty Name="ID_Phim" ColumnName="ID_Phim" />
+          <ScalarProperty Name="TenPhim" ColumnName="TenPhim" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="NamRaMat" ColumnName="NamRaMat" />
+          <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+          <ScalarProperty Name="LoaiPhim" ColumnName="LoaiPhim" />
+          <ScalarProperty Name="HinhMinhHoa" ColumnName="HinhMinhHoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phim_DaoDien">
+      <EntityTypeMapping TypeName="VieONVipProModel.Phim_DaoDien">
+        <MappingFragment StoreEntitySet="Phim_DaoDien">
+          <ScalarProperty Name="ID_Phim_DaoDien" ColumnName="ID_Phim_DaoDien" />
+          <ScalarProperty Name="ID_Phim" ColumnName="ID_Phim" />
+          <ScalarProperty Name="ID_DaoDien" ColumnName="ID_DaoDien" />
+          <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phim_TheLoai">
+      <EntityTypeMapping TypeName="VieONVipProModel.Phim_TheLoai">
+        <MappingFragment StoreEntitySet="Phim_TheLoai">
+          <ScalarProperty Name="ID_Phim_TheLoai" ColumnName="ID_Phim_TheLoai" />
+          <ScalarProperty Name="ID_Phim" ColumnName="ID_Phim" />
+          <ScalarProperty Name="ID_TheLoai" ColumnName="ID_TheLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhimYeuThiches">
+      <EntityTypeMapping TypeName="VieONVipProModel.PhimYeuThich">
+        <MappingFragment StoreEntitySet="PhimYeuThich">
+          <ScalarProperty Name="ID_PhimYeuThich" ColumnName="ID_PhimYeuThich" />
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="ID_Phim" ColumnName="ID_Phim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TapPhims">
+      <EntityTypeMapping TypeName="VieONVipProModel.TapPhim">
+        <MappingFragment StoreEntitySet="TapPhim">
+          <ScalarProperty Name="ID_TapPhim" ColumnName="ID_TapPhim" />
+          <ScalarProperty Name="ID_Phim" ColumnName="ID_Phim" />
+          <ScalarProperty Name="SoTap" ColumnName="SoTap" />
+          <ScalarProperty Name="TenTap" ColumnName="TenTap" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+          <ScalarProperty Name="NgayRaMat" ColumnName="NgayRaMat" />
+          <ScalarProperty Name="UrlPhim" ColumnName="UrlPhim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThanhToans">
+      <EntityTypeMapping TypeName="VieONVipProModel.ThanhToan">
+        <MappingFragment StoreEntitySet="ThanhToan">
+          <ScalarProperty Name="ID_ThanhToan" ColumnName="ID_ThanhToan" />
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheLoais">
+      <EntityTypeMapping TypeName="VieONVipProModel.TheLoai">
+        <MappingFragment StoreEntitySet="TheLoai">
+          <ScalarProperty Name="ID_TheLoai" ColumnName="ID_TheLoai" />
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="VieONVipProModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="RoleUser" ColumnName="RoleUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
