@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
@@ -8,9 +10,16 @@ using Vieon.Models;
 
 namespace Vieon.Controllers
 {
-    public class NguoiDungController : Controller
+    public class NguoiDungController : TemplateMethodController
     {
-        VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
+        private readonly Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+
+        public NguoiDungController()
+        {
+            PrintInformation();
+        }
+
         [HttpGet]
         public ActionResult DangNhap()
         {
@@ -40,7 +49,7 @@ namespace Vieon.Controllers
 
                     if (khach != null)
                     {
-                        ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
+                        ViewBag.ThongBao = "Đăng nhập thành công";
                         Session["ID"] = khach.ID_User;
                         Session["TaiKhoan"] = khach;
                         Session["SDT"] = khach.SDT;
@@ -125,5 +134,23 @@ namespace Vieon.Controllers
             Session["Role"] = "";
             return RedirectToAction("index", "PhimKhachs");
         }
+
+        protected override void PrintRoutes()
+        {
+            _logger.Debug($@"{GetType().Name}
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                ");
+        }
+
+        protected override void PrintDIs()
+        {
+
+        }
     }
+
 }

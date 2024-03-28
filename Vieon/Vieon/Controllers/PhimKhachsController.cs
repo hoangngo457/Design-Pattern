@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using NLog;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -11,9 +13,15 @@ using Vieon.Models;
 
 namespace Vieon.Controllers
 {
-    public class PhimKhachsController : Controller
+    public class PhimKhachsController : TemplateMethodController
     {
-        private VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
+        private readonly Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+
+        public PhimKhachsController()
+        {
+            PrintInformation();
+        }
 
         // GET: PhimKhachs
         public ActionResult Index(string searchText)
@@ -137,6 +145,27 @@ namespace Vieon.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        protected override void PrintRoutes()
+        {
+            _logger.Debug($@"{GetType().Name}
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                ");
+        }
+
+        protected override void PrintDIs()
+        {
+
         }
     }
 }

@@ -1,17 +1,16 @@
 ﻿@model IEnumerable<Vieon.Models.Phim>
 
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<title>Trang chủ</title>
 <style>
-    .vip-badge {
+    .card-pro .vip-badge {
         background-color: #c69c6d; 
         color: #fff; 
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -20px;
+        right: -20px;
         padding: 5px;
         width:60px;
         margin-top:7%;
@@ -24,11 +23,13 @@
     }
 
     .card-pro {
-        border: 1px solid #ccc;
+        position: relative;
+        /*border: 1px solid #ccc;*/
         transition: border 0.3s;
-        width: 250px;
-        height: 225px;
+        width: 201px;
+        height: 300px;
         margin-bottom: 25px;
+        margin-left: 20px;
     }
 
     .card-buttons {
@@ -63,6 +64,11 @@
         width: 80%;
     }
 
+    .img-center{
+        position: relative;
+        top: -25px;
+    }
+
     .close {
         color: #aaa;
         float: right;
@@ -90,16 +96,16 @@
         <div class="main-content-pro">
             @foreach (var pro in Model)
             {
-                <div class="col-sm-6 col-md-4 col-lg-3">
+                <div>
                     @if (pro.LoaiPhim == "Vip")
                     {
                         <text>
                             @if (userRole == "Vip" || userRole == "Admin")
                             {
                                 <a href="/PhimKhachs/Details/@pro.ID_Phim">
-                                    <div class="card-pro" style="text-align: center">
+                                    <div class="card-pro" >
                                         <br />
-                                        <img src="~/Content/images/@pro.HinhMinhHoa" width="200" height="140" />
+                                        <img class="img-center" src="~/Content/Images/@pro.HinhMinhHoa" width="200" height="250" />
                                         <div class="vip-badge">
                                             <h5>Vip</h5>
                                         </div>
@@ -113,11 +119,10 @@
                                 <a href="#" class="open-popup" data-id="@pro.ID_Phim">
                                     <div class="card-pro" style="text-align: center">
                                         <br />
-                                        <img src="~/Content/images/@pro.HinhMinhHoa" width="200" height="140" />
+                                        <img class="img-center" src="~/Content/Images/@pro.HinhMinhHoa" width="200" height="250" />
                                         <div class="vip-badge">
                                             <h5>Vip</h5>
                                         </div>
-                                        <br />
                                         <h6 style="color:black">@Html.DisplayFor(model => pro.TenPhim)</h6>
                                     </div>
                                 </a>
@@ -127,11 +132,11 @@
                     else
                     {
                         <a href="/PhimKhachs/Details/@pro.ID_Phim">
-                            <div class="card-pro" style="text-align: center">
+                            <div class="card-pro">
                                 <br />
-                                <img src="~/Content/images/@pro.HinhMinhHoa" width="200" height="140" />
+                                <img class="img-center" src="~/Content/Images/@pro.HinhMinhHoa" width="200" height="250" />
                                 <br />
-                                <h6 style="color:black">@Html.DisplayFor(model => pro.TenPhim)</h6>
+                                <h6 style="color:black; text-align: center;">@Html.DisplayFor(model => pro.TenPhim)</h6>
                             </div>
                         </a>
                     }

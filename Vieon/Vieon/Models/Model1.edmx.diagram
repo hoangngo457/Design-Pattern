@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fc4d4ca731d74e92ac09adf70ca58bd7" Name="Diagram1">
+        <EntityTypeShape EntityType="Web_xem_phimModel.BinhLuan" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.DaoDien" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.Phim" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.Phim_DaoDien" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.Phim_TheLoai" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.PhimYeuThich" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.TapPhim" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.ThanhToan" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.TheLoai" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_xem_phimModel.User" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__BinhLuan__ID_Phi__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__BinhLuan__ID_Use__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__Phim_DaoD__ID_Da__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__Phim_DaoD__ID_Ph__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__Phim_TheL__ID_Ph__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__PhimYeuTh__ID_Ph__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__TapPhim__UrlPhim__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__Phim_TheL__ID_Th__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__PhimYeuTh__ID_Us__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="Web_xem_phimModel.FK__ThanhToan__ID_Us__6477ECF3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -12,7 +12,7 @@ namespace Vieon.Controllers
 {
     public class ThanhToansController : Controller
     {
-        private VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
 
         // GET: ThanhToans
         public ActionResult Index()

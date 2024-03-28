@@ -22,7 +22,29 @@
     .info-column {
         margin-right: 20px;
     }
+
+    .edit-info {
+        background-color: #00BFFF;
+        padding: 10px 15px;
+        border-radius:3px;
+        text-decoration:none;
+        color:#fff;
+    }
+        .edit-info:hover {
+            background-color: #009ACD;
+        }
+    .change-pass {
+        background-color: #FF6A6A;
+        padding: 10px 15px;
+        border-radius: 3px;
+        text-decoration: none;
+       margin-left:40px;
+    }
+        .change-pass:hover {
+            background-color: #CD5555;
+        }
 </style>
+
 <div style="margin-left: 10%">
     <h2>Thông tin tài khoản</h2>
     <hr />
@@ -33,14 +55,10 @@
             <br />
             <strong>Email:</strong> @Html.DisplayFor(model => model.Email)
             <br />
-            <br />
-            <strong>Loại tài khoản:</strong> @Html.DisplayFor(model => model.RoleUser)
         </div>
         <div class="info-column" style="margin-left:5%">
             <strong>Số điện thoại:</strong> @Html.DisplayFor(model => model.SDT)
             <br />
-            <br />
-            <strong>Mật khẩu:</strong> @Html.DisplayFor(model => model.MatKhau)
         </div>
     </div>
     <br />
@@ -54,4 +72,13 @@
             }
         }
     </p>
+    <div>
+        <a href="/UserKhachs/Edit_Info/@Model.ID_User" class="edit-info" style="color: #fff">
+            Thay đổi thông tin cá nhân
+        </a>
+        <a href="/UserKhachs/ChangePassword/@Model.ID_User" class="change-pass" style="color: #fff">
+            Thay đổi mật khẩu
+        </a>
+    </div>
+    
 </div>

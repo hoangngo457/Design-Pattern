@@ -165,7 +165,7 @@
                                         @{Html.RenderAction("LayTheLoai", "TheLoais");}
                                     </ul>
                                 </li>
-                                <li><a href="~/Users/Details/@Session["ID"]" class="nav-link">Tài khoản</a></li>
+                                <li><a href="~/UserKhachs/Details/@Session["ID"]" class="nav-link">Tài khoản</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -195,7 +195,8 @@
         <div class="row">
             <div class="content">
                 <!-- Your existing code for the content goes here -->
-                    @RenderBody()
+                @RenderBody()
+                @RenderSection("scripts", required: false)
             </div>
         </div>
     </div>

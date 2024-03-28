@@ -12,7 +12,7 @@ namespace Vieon.Controllers
 {
     public class DaoDiensController : Controller
     {
-        private VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
 
         // GET: DaoDiens
         public ActionResult Index()

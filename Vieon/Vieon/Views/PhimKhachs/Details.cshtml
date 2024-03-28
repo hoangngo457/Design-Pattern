@@ -63,6 +63,31 @@
         .review-button:hover {
             background-color: #0056b3;
         }
+    .bookmark-add{
+        width:48px;
+        height:56px;
+        background-color: #0f0;
+        border-radius: 5px;
+    }
+    .bookmark-add img{
+        margin-top:5px;
+        margin-left:8px;
+        
+    }
+    .bookmark-remove{
+        width:48px;
+        height:48px;
+        background-color: #f00;
+        border-radius: 5px;
+    }
+    .bookmark-remove img{
+        margin-top:5px;
+        margin-left:8px;
+        
+    }
+    button{
+        border: none;
+    }
 </style>
 <div class="row">
     <div class="card-pro" style="margin-left:100px; margin-top:50px">
@@ -109,6 +134,7 @@
             </div>
         </div>
         <br />
+
         <div>
             <strong>Mô tả:</strong>
         </div>
@@ -116,6 +142,50 @@
         <div style="max-width: 650px; word-wrap: break-word;">
             @Html.DisplayFor(model => model.MoTa)
         </div>
+        <br />
+        @{
+            int id_phim = Model.ID_Phim;
+
+            if (Session["ID"] == "")
+            {
+                @Html.ActionLink("Thêm", "Create", "PhimYeuThiches", new { id_phim = Model.ID_Phim }, null)
+
+                <a href="/PhimYeuThiches/Create/@Model.ID_Phim">
+                    <div class="bookmark-add">
+                        <img src="~/Content/assets/images/add-bookmark.png" width="36px" height="36px" />
+                    </div>
+
+                </a>
+
+            }
+            else
+            {
+                int userId = Convert.ToInt32(Session["ID"]);
+
+                if (Model.PhimYeuThiches != null && Model.PhimYeuThiches.Any(p => p.ID_Phim == Model.ID_Phim && p.ID_User == userId))
+                {
+                    <a @*href="/PhimYeuThiches/DeleteInDetails/@Model.ID_Phim, @userId"*@>
+                        <div class="bookmark-remove">
+                            <img src="~/Content/assets/images/delete-bookmark.png" width="36px" height="36px" />
+                        </div>
+                    </a>
+                }
+                else
+                {
+                    @Html.ActionLink("Thêm", "Create", "PhimYeuThiches", new { id_phim = Model.ID_Phim }, null)
+                    <a href="/PhimYeuThiches/Create/@Model.ID_Phim">
+                        <div class="bookmark-add">
+                            <img src="~/Content/assets/images/add-bookmark.png" width="36px" height="36px" />
+                        </div>
+                    </a>
+
+                }
+            }
+
+        }
+
+
+
     </div>
 </div>
 <br />
@@ -173,3 +243,4 @@
 <br />
 <br />
 <br />
+

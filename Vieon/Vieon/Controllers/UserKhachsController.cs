@@ -12,7 +12,7 @@ namespace Vieon.Controllers
 {
     public class UserKhachsController : Controller
     {
-        private VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
 
         // GET: UserKhachs
         public ActionResult Index()
@@ -88,6 +88,72 @@ namespace Vieon.Controllers
             }
             return View(user);
         }
+
+        [HttpGet]
+        public ActionResult Edit_Info(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            User user = db.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit_Info([Bind(Include = "ID_User,SDT,HoTen,Email,MatKhau,RoleUser")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Details", "UserKhachs", new { id = user.ID_User });
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword(ChangePassword model)
+        {
+            int userId = Convert.ToInt32(Session["ID"]);
+
+            var user = db.Users.FirstOrDefault(u => u.ID_User == userId);
+
+            if (user != null  && user.MatKhau == model.CurentPassword)
+            {
+                if(model.NewPassword == model.ConfirmPassword)
+                {
+                    user.MatKhau = model.NewPassword;
+                    db.SaveChanges();
+                    TempData["SuccessMessage"] = "Mật khẩu của bạn đã được thay đổi thành công!";
+                    return RedirectToAction("Details", "UserKhachs", new { id = user.ID_User });
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Mật khẩu không khớp");
+                    return View();
+                }
+
+            }
+            else
+            {
+                ModelState.AddModelError("","Mật khẩu không chính xác");
+                return View();
+            }
+        }
+
 
         // GET: UserKhachs/Delete/5
         public ActionResult Delete(int? id)

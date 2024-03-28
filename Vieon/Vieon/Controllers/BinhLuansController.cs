@@ -14,7 +14,7 @@ namespace Vieon.Controllers
 {
     public class BinhLuansController : Controller
     {
-        private VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
 
         // GET: BinhLuans
         public ActionResult Index()

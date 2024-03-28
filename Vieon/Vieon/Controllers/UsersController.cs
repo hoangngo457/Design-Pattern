@@ -12,7 +12,7 @@ namespace Vieon.Controllers
 {
     public class UsersController : Controller
     {
-        private VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
 
         // GET: Users
         public ActionResult Index()

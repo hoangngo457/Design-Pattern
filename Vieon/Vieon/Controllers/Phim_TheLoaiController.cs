@@ -12,7 +12,7 @@ namespace Vieon.Controllers
 {
     public class Phim_TheLoaiController : Controller
     {
-        private VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
 
         // GET: Phim_TheLoai
         public ActionResult Index()

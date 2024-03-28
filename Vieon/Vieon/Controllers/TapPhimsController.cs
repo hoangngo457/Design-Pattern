@@ -12,7 +12,7 @@ namespace Vieon.Controllers
 {
     public class TapPhimsController : Controller
     {
-        private VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
 
         // GET: TapPhims
         public ActionResult Index()
@@ -52,6 +52,7 @@ namespace Vieon.Controllers
         {
             if (ModelState.IsValid)
             {
+                tapPhim.NgayRaMat = DateTime.Now;
                 db.TapPhims.Add(tapPhim);
                 db.SaveChanges();
                 return RedirectToAction("Edit", "Phims", new { id = tapPhim.ID_Phim });

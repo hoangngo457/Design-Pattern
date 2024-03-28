@@ -1,40 +1,87 @@
-﻿@model IEnumerable<Vieon.Models.PhimYeuThich>
+﻿@*@model IEnumerable<Vieon.Models.PhimYeuThich>*@
+@model List<Vieon.Models.Favorite>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/Basic_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<style>
+    .notice {
+        color: #000;
+        margin: 50px 0px;
+        text-align: center;
+        font-size: 25px;
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Phim.TenPhim)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.SDT)
-        </th>
-        <th></th>
-    </tr>
+    .card .delete-badge {
+        color: #000;
+        background: none;
+        position: absolute;
+        right: 0px;
+        padding: 0px 8px;
+        background-color: #fff;
+        height: 35px;
+        border-radius: 5px;
+    }
+    .delete-badge h5{
+        font-weight: bold;
+        padding-top:5px;
+    }
+    .phim{
+        margin-left:30px;
+    }
+    .card {
+        border: none;
+        background-color: #EEEEEE;
+        border-radius: 3px;
+        padding:0px;
+        width:210px;
+    }
+        .card :hover {
+            background-color: #BBBBBB;
+            border-radius: 3px;
+        }
+    .img-center{
+        margin-top:5px;
+        margin-left:-10px;
+    }
+</style>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phim.TenPhim)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.SDT)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PhimYeuThich }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_PhimYeuThich }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PhimYeuThich })
-        </td>
-    </tr>
+@{
+    if (Session["ID"] == "")
+    {
+        <p class="notice">Vui lòng <a href="@Url.Action("DangNhap", "NguoiDung")">đăng nhập</a> để xem các phim yêu thích.</p>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+            <div class="phim">
+                <div class="card">
+                    <a href="/PhimKhachs/Details/@item.ID_Phim">
+                        <div class="card-pro col-12">
+                            <img class="img-center" src="~/Content/Images/Tet2.jpg" width="200" height="250" />
+
+                            <h6 style="color:black; text-align:center; margin-top:15px;">@Html.DisplayFor(model => item.TenPhim)</h6>
+                        </div>
+                    </a>
+                    <a class="delete-badge" href="/PhimYeuThiches/Delete/@item.ID_PhimYeuThich">
+                        <div>
+                            <h5>X</h5>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            }
+        </div>
+        
+
+    }
 }
 
-</table>
+

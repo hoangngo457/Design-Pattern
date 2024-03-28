@@ -13,7 +13,7 @@ namespace Vieon.Controllers
     {
         // GET: MuaGoiVip
 
-        VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
         public ActionResult ThongTinGoi()
         {
             return View();

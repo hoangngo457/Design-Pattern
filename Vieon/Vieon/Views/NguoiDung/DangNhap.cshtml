@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "DangNhap";
+    ViewBag.Title = "Đăng Nhập Tài Khoản";
     Layout = "~/Views/Shared/_LayoutDKDN.cshtml";
 }
 
@@ -12,6 +12,11 @@
         border-radius: 5px;
         background-color: ghostwhite;
         width: 500px;
+    }
+    .btn-login{
+        align-items: center;
+        margin-left: 100px;
+        margin-top: 10px;
     }
 </style>
 <div class="offset-md-1 col-md-10 login-form">
@@ -44,7 +49,7 @@
                     })
                 </div>
                 <h6 style="color: red;">@ViewBag.ThongBao</h6>
-                <button type="submit" class="btn btn-primary">ĐĂNG NHẬP</button>
+                <button type="submit" class="btn btn-primary btn-login">ĐĂNG NHẬP</button>
             }
         </div>
     </div>

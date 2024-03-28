@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Vieon.Models;
 
@@ -12,116 +10,103 @@ namespace Vieon.Controllers
 {
     public class PhimYeuThichesController : Controller
     {
-        private VieONVipProEntities db = new VieONVipProEntities();
+        private VieONEntities db = new VieONEntities();
 
         // GET: PhimYeuThiches
         public ActionResult Index()
         {
-            var phimYeuThiches = db.PhimYeuThiches.Include(p => p.Phim).Include(p => p.User);
-            return View(phimYeuThiches.ToList());
+            int? id = Session["ID"] as int?;
+
+
+            // Kiểm tra xem có dữ liệu tài khoản không
+            if (id.HasValue)
+            {
+                // Truy vấn cơ sở dữ liệu để lấy danh sách các phim yêu thích của người dùng dựa trên idUser
+                var favoriteMovies = db.PhimYeuThiches
+                    .Where(m => m.ID_User == id)
+                    .Select(m => new Favorite
+                    {
+                        ID_Phim = m.Phim.ID_Phim,
+                        TenPhim = m.Phim.TenPhim,
+                        ID_PhimYeuThich = m.ID_PhimYeuThich
+                    })
+                    .ToList();
+
+                // Trả về view và truyền danh sách phim yêu thích vào
+                if (favoriteMovies.Count > 0)
+                {
+                    return View(favoriteMovies);
+                }
+                else
+                {
+                    return RedirectToAction("Empty", "PhimYeuThiches");
+                }
+                
+            }
+            else
+            {
+                return View();
+            }
         }
 
-        // GET: PhimYeuThiches/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Empty()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PhimYeuThich phimYeuThich = db.PhimYeuThiches.Find(id);
-            if (phimYeuThich == null)
-            {
-                return HttpNotFound();
-            }
-            return View(phimYeuThich);
-        }
-
-        // GET: PhimYeuThiches/Create
-        public ActionResult Create()
-        {
-            ViewBag.ID_Phim = new SelectList(db.Phims, "ID_Phim", "TenPhim");
-            ViewBag.ID_User = new SelectList(db.Users, "ID_User", "SDT");
             return View();
         }
 
-        // POST: PhimYeuThiches/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_PhimYeuThich,ID_User,ID_Phim")] PhimYeuThich phimYeuThich)
+        public ActionResult Create(int id_phim)
         {
-            if (ModelState.IsValid)
+            if (Session["ID"] == "")
             {
-                db.PhimYeuThiches.Add(phimYeuThich);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                // Nếu không có session ID, chuyển hướng đến trang đăng nhập
+                return RedirectToAction("DangNhap", "NguoiDung"); 
             }
 
-            ViewBag.ID_Phim = new SelectList(db.Phims, "ID_Phim", "TenPhim", phimYeuThich.ID_Phim);
-            ViewBag.ID_User = new SelectList(db.Users, "ID_User", "SDT", phimYeuThich.ID_User);
-            return View(phimYeuThich);
+            int id_user = Convert.ToInt32(Session["ID"]);
+
+            // Tạo một đối tượng mới PhimYeuThich với id_phim và id_user
+            PhimYeuThich phimYeuThich = new PhimYeuThich
+            {
+                ID_Phim = id_phim,
+                ID_User = id_user
+            };
+
+            // Thêm đối tượng mới vào DbContext và lưu thay đổi
+            db.PhimYeuThiches.Add(phimYeuThich);
+            db.SaveChanges();
+
+            return RedirectToAction("Details", "PhimKhachs", new { id = id_phim });
         }
 
-        // GET: PhimYeuThiches/Edit/5
-        public ActionResult Edit(int? id)
+
+        public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             PhimYeuThich phimYeuThich = db.PhimYeuThiches.Find(id);
             if (phimYeuThich == null)
             {
-                return HttpNotFound();
+                return HttpNotFound(); // Trả về lỗi 404 nếu không tìm thấy đối tượng
             }
-            ViewBag.ID_Phim = new SelectList(db.Phims, "ID_Phim", "TenPhim", phimYeuThich.ID_Phim);
-            ViewBag.ID_User = new SelectList(db.Users, "ID_User", "SDT", phimYeuThich.ID_User);
-            return View(phimYeuThich);
-        }
-
-        // POST: PhimYeuThiches/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_PhimYeuThich,ID_User,ID_Phim")] PhimYeuThich phimYeuThich)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(phimYeuThich).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.ID_Phim = new SelectList(db.Phims, "ID_Phim", "TenPhim", phimYeuThich.ID_Phim);
-            ViewBag.ID_User = new SelectList(db.Users, "ID_User", "SDT", phimYeuThich.ID_User);
-            return View(phimYeuThich);
-        }
-
-        // GET: PhimYeuThiches/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PhimYeuThich phimYeuThich = db.PhimYeuThiches.Find(id);
-            if (phimYeuThich == null)
-            {
-                return HttpNotFound();
-            }
-            return View(phimYeuThich);
-        }
-
-        // POST: PhimYeuThiches/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            PhimYeuThich phimYeuThich = db.PhimYeuThiches.Find(id);
             db.PhimYeuThiches.Remove(phimYeuThich);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteInDetails(int id_phim, int id_user)
+        {
+            int id_Phim = Convert.ToInt32(RouteData.Values["id"]);
+            // Tìm dòng dữ liệu PhimYeuThich dựa trên id_phim và id_user
+            PhimYeuThich phimYeuThich = db.PhimYeuThiches.FirstOrDefault(p => p.ID_Phim == id_phim && p.ID_User == id_user);
+
+            if (phimYeuThich == null)
+            {
+                return HttpNotFound(); // Trả về lỗi 404 nếu không tìm thấy dòng dữ liệu
+            }
+
+            // Xóa dòng dữ liệu PhimYeuThich
+            db.PhimYeuThiches.Remove(phimYeuThich);
+            db.SaveChanges();
+
+            return RedirectToAction("Details", "PhimKhachs", new { id = id_Phim });
         }
 
         protected override void Dispose(bool disposing)

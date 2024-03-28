@@ -1,0 +1,36 @@
+2024-03-28 18:07:35.8259|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 18:07:50.8601|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 18:08:45.9487|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
