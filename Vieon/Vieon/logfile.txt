@@ -34,3 +34,448 @@
                 GET: PhimKhachs/Delete/:id
                 POST: PhimKhachs/Delete/:id
                 
+2024-03-28 19:49:06.7853|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 19:49:36.6740|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 19:52:13.9992|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 20:48:47.1385|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 20:49:02.8527|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-28 20:49:08.3658|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-28 20:54:02.6899|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 20:54:04.3291|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 21:43:28.3802|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 21:59:25.3601|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-28 23:17:39.0579|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-28 23:20:16.1363|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-28 23:20:16.2052|INFO|Vieon.Controllers.NguoiDungController|NguoiDungController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 11:03:52.9136|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 11:03:52.9760|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 11:21:21.2300|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 11:21:21.3520|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 11:34:35.4833|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 11:34:35.5906|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:07:42.5747|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-29 14:07:42.6688|INFO|Vieon.Controllers.NguoiDungController|NguoiDungController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:07:42.7048|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:07:42.7048|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:07:46.5686|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:07:46.5686|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:18:01.1669|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-29 14:18:01.2449|INFO|Vieon.Controllers.NguoiDungController|NguoiDungController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:23:20.8374|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-29 14:23:20.9301|INFO|Vieon.Controllers.NguoiDungController|NguoiDungController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:23:20.9520|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:23:20.9520|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:33:08.8827|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-29 14:33:08.8827|INFO|Vieon.Controllers.NguoiDungController|NguoiDungController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:33:08.9082|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:33:08.9106|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:33:11.9852|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-29 14:33:11.9852|INFO|Vieon.Controllers.NguoiDungController|NguoiDungController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:33:19.2737|DEBUG|Vieon.Controllers.NguoiDungController|NguoiDungController
+                GET: NguoiDung/DangNhap
+                POST: NguoiDung/DangNhap
+                GET: NguoiDung/DangKi
+                POST: NguoiDung/DangKi
+                POST: NguoiDung/DangXuat
+                
+                
+2024-03-29 14:33:19.2737|INFO|Vieon.Controllers.NguoiDungController|NguoiDungController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:33:19.3293|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:33:19.3324|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:34:38.3937|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:34:38.3937|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:34:40.6874|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:34:40.6874|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:34:46.9538|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:34:46.9588|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:35:21.8389|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:35:21.8389|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                
+2024-03-29 14:35:35.5644|DEBUG|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Routes:
+                GET: PhimKhachs/Index
+                GET: PhimKhachs/PhimTheoTheLoai
+                GET: PhimKhachs/Details/:id
+                GET: PhimKhachs/Create
+                POST: PhimKhachs/Create
+                POST: NguoiDung/DangXuat
+                GET: PhimKhachs/Edit/:id
+                POST: PhimKhachs/Edit/:id
+                GET: PhimKhachs/Delete/:id
+                POST: PhimKhachs/Delete/:id
+                
+2024-03-29 14:35:35.5654|INFO|Vieon.Controllers.PhimKhachsController|PhimKhachsController
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                

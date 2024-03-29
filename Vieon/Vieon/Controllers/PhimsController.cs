@@ -6,13 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Vieon.Controllers.Observer;
 using Vieon.Models;
 
 namespace Vieon.Controllers
 {
     public class PhimsController : Controller
     {
-        private VieONEntities db = new VieONEntities();
+        VieONEntities db = DbContextSingleton.getInstance;
 
         // GET: Phims
         public ActionResult Index(string searchText)

@@ -150,6 +150,7 @@ namespace Vieon.Controllers
         protected override void PrintRoutes()
         {
             _logger.Debug($@"{GetType().Name}
+                Routes:
                 GET: PhimKhachs/Index
                 GET: PhimKhachs/PhimTheoTheLoai
                 GET: PhimKhachs/Details/:id
@@ -165,7 +166,11 @@ namespace Vieon.Controllers
 
         protected override void PrintDIs()
         {
-
+            _logger.Info($@"{GetType().Name}
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                ");
         }
     }
 }

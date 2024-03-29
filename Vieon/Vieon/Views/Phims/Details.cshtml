@@ -66,7 +66,7 @@
 </style>
 <div class="row">
     <div class="card-pro" style="margin-left:100px; margin-top:50px">
-        <img src="~/Content/images/@Model.HinhMinhHoa" width="250">
+        <img src="~/Content/Images/@Model.HinhMinhHoa" width="250">
     </div>
     <div style="margin-left: 75px; margin-top: 50px">
         <h3 style="color: #007BFF "><strong>@Html.DisplayFor(model => model.TenPhim)</strong></h3>
@@ -121,6 +121,9 @@
     </ul>
 </div>
 <br />
+<div class="form-group">
+    @Html.ActionLink("Thêm tập phim", "Create", "TapPhims", new { id = Model.ID_Phim }, new { @class = "btn btn-primary" })
+</div>
 <h2>Danh sách tập của phim</h2>
 <div class="vertical-scroll-container">
     <ul class="dau-sach-list">

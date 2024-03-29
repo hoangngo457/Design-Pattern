@@ -6,13 +6,15 @@ using System.Linq;
 using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
+using Vieon.Controllers.Observer;
 using Vieon.Models;
 
 namespace Vieon.Controllers
 {
     public class NguoiDungController : TemplateMethodController
     {
-        private VieONEntities db = new VieONEntities();
+        VieONEntities db = DbContextSingleton.getInstance;
+
         private readonly Logger _logger = NLog.LogManager.GetCurrentClassLogger();
 
         public NguoiDungController()
@@ -149,7 +151,11 @@ namespace Vieon.Controllers
 
         protected override void PrintDIs()
         {
-
+            _logger.Info($@"{GetType().Name}
+                Dependencies:
+                ApplicationDbContext db
+                Longer -longer
+                ");
         }
     }
 
